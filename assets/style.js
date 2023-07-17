@@ -26,6 +26,7 @@ var swiper = new Swiper(".slider", {
         }
     }
 }).on('slideChange', function (e) {
+    $('.text-effect-show-slider').removeClass('text-effect-show-slider');
     setTimeout(function(){
         $('.wrap-slider .swiper-slide-active .wrap-slider-content').find('.content').addClass('text-effect-show-slider');
     }, 100);
