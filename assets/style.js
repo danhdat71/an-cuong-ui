@@ -1,3 +1,10 @@
+// Preloading
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+$(window).on('load', function(){
+    $('.loading-wall').addClass('hide-wall');
+});
 // Ao
 AOS.init();
 

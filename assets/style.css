@@ -13,8 +13,37 @@
     --color-black-alpha-08: rgba(0,0,0,0.8);
     --color-black-alpha-06: rgba(0,0,0,0.6);
     --color-black-alpha-02: rgba(0,0,0,0.2);
+    --color-black-alpha-05: rgba(0,0,0,0.5);
+    --color-black-alpha-01: rgba(0,0,0,0.1);
+    --color-black-alpha-04: rgba(0,0,0,0.4);
+    --color-light: #ccc;
     --color-normal: #7e8387;
     --color-white-grey: #efefef;
+}
+
+.loading-wall .top,
+.loading-wall .bottom {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--color-white-grey);
+    transition: 1s;
+    z-index: 10;
+}
+
+.loading-wall .top {
+    top: 0;
+}
+
+.loading-wall .bottom {
+    bottom: 0;
+}
+
+.loading-wall.hide-wall .top,
+.loading-wall.hide-wall .bottom {
+    height: 0;
 }
 
 .text-effect-show {
@@ -361,6 +390,7 @@ header {
 .wrap-slider {
     height: 100vh;
     width: 100%;
+    position: relative;
 }
 
 .wrap-slider .slider {
@@ -802,11 +832,267 @@ header {
     transition: .4s;
 }
 
-/* [data-aos="new-animation"] {
-    opacity: 0;
-    transition-property: transform, opacity;
+.title-1 {
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--color-highlight);
+}
+
+.design-award {
+    padding: 40px 0;
+}
+
+.design-award .title-1 {
+    padding-bottom: 20px;
+}
+
+.card-3 {
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-normal-dark);
+    transition: .4s;
+    width: 100%;
+    height: 850px;
+}
+
+.card-3 .wrap-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.card-3 .wrap-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-3 .wrap-image .wrap-detail {
+    font-family: Montserrat,sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #6f777c;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-white);
+    transition: .4s;
+    transform: translateY(100%);
+}
+
+.card-3:hover {
+    padding: 15px;
+}
+
+.card-3:hover .wrap-image .wrap-detail {
+    bottom: 0!important;
+    transform: translateY(0);
+}
+
+.title-and-youtube {
+    display: flex;
+    align-items: center;
+}
+
+.title-and-youtube img {
+    width: 270px;
+}
+
+.title-and-youtube .title {
+    text-decoration: none;
+    display: inline-block;
+    padding: 7px 0 7px 25px;
+    margin-left: 25px;
+    border-left: 1px solid var(--color-black-alpha-05);
+    color: var(--color-black-alpha-05);
+    font-size: 18px;
+    color: var(--color-black);
+    font-weight: 500;
+    transition: .4s;
+}
+
+.title-and-youtube .title:hover {
+    color: var(--color-highlight);
+}
+
+.youtube-out-standing .wrap-logo-youtube {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.youtube-out-standing {
+    background-color: var(--color-white-grey);
+    padding: 50px 0;
+}
+
+.card-youtube-1 {
+    text-decoration: none!important;
+    transition: .4s;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-white-grey);
+}
+
+.card-youtube-1 .data-aos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-color: var(--color-white-grey);
+}
+
+.card-youtube-1:hover {
+    box-shadow: 6px 6px 10px 0 var(--color-black-alpha-01);
+    background: var(--color-black-alpha-04);
+}
+
+.card-youtube-1:hover .title {
+    color: var(--color-white);
+}
+
+.card-youtube-1:hover .wrap-image img{
+    transform: scale(1.1);
+}
+
+.card-youtube-1 .wrap-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.card-youtube-1 .wrap-image img {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: .4s;
+}
+
+.card-youtube-1 .wrap-title img {
+    height: calc(75/100*70px);
+    width: 70px;
+    bottom: 10px;
+    left: 10px;
+}
+
+.card-youtube-1 .wrap-title {
+    display: flex;
+    color: var(--color-black);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+.card-youtube-1 .wrap-title .title {
+    position: relative;
+    padding: 10px 15px;
+    margin-left: 5px;
+    text-transform: capitalize;
+    transition: .4s;
+}
+
+.card-youtube-1 .wrap-title .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-color: var(--color-black-alpha-05);
+}
+
+.youtube-out-standing .wrap-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer {
+    padding: 20px 0;
+    margin: 0;
+    background-color: var(--color-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+footer .item-app {
+    height: 50px;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: .4s;
+}
+
+footer .item-app:hover {
+    background-color: var(--color-normal-dark);
+}
+
+footer .wrap-social {
+    padding: 10px;
+}
+
+footer .item-social {
+    padding: 0 5px;
+}
+
+footer .item-social img {
+    width: 40px;
+    height: 40px;
+}
+
+footer .copyright {
+    width: auto;
+    height: auto;
+    padding: 20px 20px 20px 0;
+    color: var(--color-light);
+    text-align: left;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    max-width: 280px;
+    font-family: Montserrat,sans-serif;
+}
+
+footer .wrap-licence img {
+    width: 140px;
+}
+
+[data-aos="left-to-right"] {
+    left: 0;
   
     &.aos-animate {
-        opacity: 1;
+        left: 100%;
     }
+}
+
+[data-aos="right-to-left"] {
+    right: 0;
+  
+    &.aos-animate {
+        right: 100%;
+    }
+}
+
+/* body[data-aos-duration='4000'] [data-aos],
+  [data-aos][data-aos][data-aos-duration='4000'] {
+    transition-duration: 4000ms;
 } */
