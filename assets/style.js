@@ -9,7 +9,7 @@ $(window).on('load', function(){
 AOS.init();
 
 // Slider
-const sliderTimeDelay = 3000;
+const sliderTimeDelay = 3000000;
 var swiper = new Swiper(".slider", {
     spaceBetween: 0,
     effect: "fade",
